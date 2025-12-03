@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>Latest Publications</h1>
+<ul>
+    {% for post in posts %}
+    <li>
+        <a href="/{{ post.slug }}" style="font-size: 1.2em;">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}
