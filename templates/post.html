@@ -1,7 +1,16 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="article">
+<div style="margin-bottom: 30px;">
+    <a href="/" style="font-family: var(--font-head); font-size: 0.85rem; color: #888;">&larr; Return to Index</a>
+</div>
+
+<article>
+    <!-- The content rendered from Markdown -->
     {{ content|safe }}
+</article>
+
+<div style="margin-top: 60px; text-align: center;">
+    <span style="display: inline-block; width: 50px; border-top: 1px solid #ddd;"></span>
 </div>
 {% endblock %}

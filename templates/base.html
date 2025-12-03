@@ -3,27 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Research Notes</title>
+    <title>Kristina Research | Computational Analysis</title>
     <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background: #fdfdfd; }
-        h1, h2, h3 { color: #111; font-weight: 600; margin-top: 1.5em; }
-        a { color: #0066cc; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        pre { background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto; border: 1px solid #ddd; }
-        code { font-family: "Consolas", "Monaco", monospace; font-size: 0.9em; }
-        .nav { margin-bottom: 40px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-        .footer { margin-top: 50px; border-top: 1px solid #eee; padding-top: 20px; font-size: 0.8em; color: #777; }
+        :root {
+            --bg-color: #ffffff;
+            --text-color: #222222;
+            --accent-color: #003366; /* Academic Blue */
+            --meta-color: #666666;
+            --code-bg: #f5f7f9;
+            --font-body: "Georgia", "Times New Roman", serif;
+            --font-head: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-body);
+            line-height: 1.7; /* High readability */
+            font-size: 19px; /* Slightly larger for authority */
+            margin: 0;
+            padding: 0;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            max-width: 720px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* Typography */
+        h1, h2, h3 {
+            font-family: var(--font-head);
+            font-weight: 700;
+            color: #111;
+            margin-top: 2em;
+            margin-bottom: 0.8em;
+            letter-spacing: -0.02em;
+        }
+
+        h1 { font-size: 2.2rem; border-bottom: 1px solid #eee; padding-bottom: 20px; margin-top: 0; }
+        h2 { font-size: 1.5rem; }
+        h3 { font-size: 1.2rem; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.9rem; color: var(--meta-color); }
+
+        a { color: var(--accent-color); text-decoration: none; border-bottom: 1px solid transparent; transition: border 0.2s; }
+        a:hover { border-bottom: 1px solid var(--accent-color); }
+
+        /* The "Journal" Navigation */
+        .header {
+            border-bottom: 2px solid #111;
+            padding-bottom: 10px;
+            margin-bottom: 50px;
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            font-family: var(--font-head);
+        }
+        .brand { font-weight: 700; font-size: 1.1rem; color: #000; letter-spacing: -0.5px; }
+        .brand:hover { border-bottom: none; }
+        .nav-link { font-size: 0.9rem; color: var(--meta-color); }
+
+        /* Code Blocks (The R-Snippet Highlight) */
+        pre {
+            background: var(--code-bg);
+            padding: 20px;
+            border-radius: 4px;
+            border-left: 4px solid var(--accent-color);
+            overflow-x: auto;
+            font-size: 0.85em;
+            margin: 30px 0;
+        }
+        code { font-family: "Menlo", "Consolas", "Monaco", monospace; }
+        p code { background: #eee; padding: 2px 5px; border-radius: 3px; font-size: 0.9em; }
+
+        /* Footer */
+        .footer {
+            margin-top: 80px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+            font-family: var(--font-head);
+            font-size: 0.85rem;
+            color: var(--meta-color);
+            text-align: center;
+        }
     </style>
 </head>
 <body>
-    <div class="nav">
-        <a href="/"><strong>MY RESEARCH ARCHIVE</strong></a>
-    </div>
-    
-    {% block content %}{% endblock %}
+    <div class="container">
+        <div class="header">
+            <a href="/" class="brand">K. RESEARCH &middot; ARCHIVE</a>
+            <span class="nav-link">Computational Biology & AI</span>
+        </div>
+        
+        {% block content %}{% endblock %}
 
-    <div class="footer">
-        &copy; 2025 Research Archive. Powered by Python.
+        <div class="footer">
+            &copy; 2025 Research Group. Published via Citadel.
+        </div>
     </div>
 </body>
 </html>
