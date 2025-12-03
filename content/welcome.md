@@ -1,4 +1,4 @@
-# 👤 THE ARCHITECT: MASTER PSYCH-COGNITIVE PROFILE
+# THE ARCHITECT: MASTER PSYCH-COGNITIVE PROFILE
 **Subject:** Kristina
 **Designation:** The Architect / The Visionary Pragmatist
 **AI Designator:** Kepler (The Competent Executive / The Orbital Vessel)
