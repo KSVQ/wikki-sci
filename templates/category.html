@@ -27,10 +27,7 @@
         </p>
         {% endif %}
 
-        <!-- File Meta -->
-        <span style="font-family: 'Menlo', monospace; font-size: 0.75rem; color: var(--meta-color);">
-            /{{ meta.slug }}/{{ post.slug }}.md
-        </span>
+        <a href="/{{ post.category_slug }}/{{ post.slug }}" style="font-size: 0.9rem; font-weight: 500; color: var(--accent-color);">Read Entry &rarr;</a>
         
     </li>
     {% endfor %}
