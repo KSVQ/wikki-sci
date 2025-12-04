@@ -1,16 +1,25 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div style="margin-bottom: 30px;">
-    <a href="/" style="font-family: var(--font-head); font-size: 0.85rem; color: #888;">&larr; Return to Index</a>
+<!-- Context Header: Shows the Category -->
+<div style="margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 10px;">
+    <a href="/{{ category }}" style="text-decoration: none;">
+        <span style="font-family: var(--font-head); font-size: 0.75rem; color: #999; text-transform: uppercase; letter-spacing: 1px;">
+            {{ category|title }} / REPO
+        </span>
+    </a>
 </div>
 
 <article>
     <!-- The content rendered from Markdown -->
+    <!-- Note: We rely on the Markdown file having an # H1 at the top -->
     {{ content|safe }}
 </article>
 
-<div style="margin-top: 60px; text-align: center;">
-    <span style="display: inline-block; width: 50px; border-top: 1px solid #ddd;"></span>
+<!-- Footer Navigation -->
+<div style="margin-top: 80px; text-align: left; border-top: 1px solid #eee; padding-top: 20px;">
+    <a href="/{{ category }}" style="font-family: var(--font-head); font-size: 0.9rem; font-weight: 600; color: #555;">
+        &larr; Return to {{ category|title }}
+    </a>
 </div>
 {% endblock %}

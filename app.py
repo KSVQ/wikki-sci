@@ -1,50 +1,150 @@
 import os
 from flask import Flask, render_template, abort
 import markdown
+from markdown.extensions.toc import TocExtension
 
 app = Flask(__name__)
 
 # CONFIGURATION
 CONTENT_DIR = 'content'
 
-def get_posts():
-    """Helper function to get list of posts."""
+# CATEGORY META (No changes here)
+CATEGORY_META = {
+    'publications': {
+        'title': 'Publications', 
+        'desc': 'Formal architectural frameworks, technical papers, and finished studies.'
+    },
+    'observations': {
+        'title': 'Working Papers', 
+        'desc': 'Hypotheses, system observations, and ongoing field notes.'
+    },
+    'research': {
+        'title': 'Resources', 
+        'desc': 'Curated signals, external literature, and significant datasets.'
+    },
+    'commentary': {
+        'title': 'Commentary', 
+        'desc': 'Critical analysis, essays, and dialectics on the field.'
+    },
+    'tools': {
+        'title': 'Tools', 
+        'desc': 'Software, algorithms, and computational utilities.'
+    }
+}
+
+def get_categories():
+    """Returns a list of active categories found in the content dir."""
+    cats = []
+    if not os.path.exists(CONTENT_DIR):
+        return []
+    for slug, meta in CATEGORY_META.items():
+        if os.path.isdir(os.path.join(CONTENT_DIR, slug)):
+            cats.append({'slug': slug, 'title': meta['title'], 'desc': meta['desc']})
+    return cats
+
+def extract_metadata(filepath):
+    """
+    Reads a markdown file and extracts:
+    1. Title (First line)
+    2. Summary (First non-empty line after title)
+    """
+    title = "Untitled"
+    summary = ""
+    
     try:
-        files = [f for f in os.listdir(CONTENT_DIR) if f.endswith('.md')]
-    except FileNotFoundError:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            lines = f.readlines()
+            
+            # 1. Get Title (First Line)
+            if lines:
+                title = lines[0].replace('#', '').strip()
+            
+            # 2. Get Summary (Scan for first text block)
+            for line in lines[1:]:
+                clean_line = line.strip()
+                # Skip empty lines, headers, or blockquotes if you prefer
+                if clean_line and not clean_line.startswith('#'):
+                    summary = clean_line
+                    # Truncate if too long (optional)
+                    if len(summary) > 160: 
+                        summary = summary[:160] + "..."
+                    break
+    except Exception as e:
+        print(f"Error parsing {filepath}: {e}")
+        
+    return title, summary
+
+def get_all_posts():
+    """Scans ALL category folders to build the Homepage Feed."""
+    all_posts = []
+    for cat_slug in CATEGORY_META:
+        cat_path = os.path.join(CONTENT_DIR, cat_slug)
+        if os.path.exists(cat_path):
+            for f in os.listdir(cat_path):
+                if f.endswith('.md'):
+                    slug = f.replace('.md', '')
+                    title, summary = extract_metadata(os.path.join(cat_path, f))
+                    
+                    all_posts.append({
+                        'title': title,
+                        'summary': summary, # NEW FIELD
+                        'slug': slug,
+                        'category_slug': cat_slug, 
+                        'category_title': CATEGORY_META[cat_slug]['title']
+                    })
+    return all_posts
+
+def get_posts_in_category(category_slug):
+    """Get posts only for a specific category."""
+    cat_path = os.path.join(CONTENT_DIR, category_slug)
+    if not os.path.exists(cat_path):
         return []
     
     posts = []
-    for f in files:
-        # Use utf-8 to prevent Windows crash
-        with open(os.path.join(CONTENT_DIR, f), 'r', encoding='utf-8') as file_handle:
-            first_line = file_handle.readline().strip().replace('#', '').strip()
+    for f in os.listdir(cat_path):
+        if f.endswith('.md'):
             slug = f.replace('.md', '')
-            posts.append({'title': first_line or slug, 'slug': slug})
+            title, summary = extract_metadata(os.path.join(cat_path, f))
+            
+            posts.append({
+                'title': title, 
+                'summary': summary, # NEW FIELD
+                'slug': slug, 
+                'category_slug': category_slug
+            })
     return posts
 
-# AUTOMATION: This runs before every template render
 @app.context_processor
-def inject_posts():
-    return dict(sidebar_posts=get_posts())
+def inject_globals():
+    return dict(categories=get_categories())
 
 @app.route('/')
 def index():
-    # We don't need to pass posts here anymore, the context_processor does it
-    return render_template('index.html')
+    posts = get_all_posts()
+    return render_template('index.html', posts=posts)
 
-@app.route('/<slug>')
-def page(slug):
-    filepath = os.path.join(CONTENT_DIR, f"{slug}.md")
+@app.route('/<category>')
+def category_index(category):
+    if category not in CATEGORY_META:
+        abort(404)
+    posts = get_posts_in_category(category)
+    meta = CATEGORY_META[category].copy()
+    meta['slug'] = category
+    return render_template('category.html', posts=posts, meta=meta)
+
+@app.route('/<category>/<slug>')
+def post(category, slug):
+    filepath = os.path.join(CONTENT_DIR, category, f"{slug}.md")
     if not os.path.exists(filepath):
         abort(404)
     
     with open(filepath, 'r', encoding='utf-8') as f:
-        content = f.read()
+        text = f.read()
     
-    html_content = markdown.markdown(content, extensions=['fenced_code', 'codehilite'])
+    md = markdown.Markdown(extensions=['fenced_code', 'codehilite', TocExtension(baselevel=2)])
+    html_content = md.convert(text)
     
-    return render_template('post.html', content=html_content, title=slug)
+    return render_template('post.html', content=html_content, title=slug, toc=md.toc, category=category)
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=8000)

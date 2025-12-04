@@ -1,31 +1,34 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="article">
-    <h1>Research Archive</h1>
-    <p style="font-size: 1.2rem; color: #444;">
-        Welcome to the digital notebook for <strong>Computational Biology & AI Integration</strong>.
+<div style="margin-bottom: 40px;">
+    <h1>System Logs</h1>
+    <p style="font-size: 1.1em; color: #555;">
+        A digital laboratory for systems architecture, artificial intelligence, and the restructuring of educational models.
     </p>
-    <p>
-        The papers archived here focus on bridging the gap between wet-lab biology and modern data engineering. 
-        Most researchers are undertrained in the software tools required for today's high-throughput analysis.
-    </p>
-    <hr style="margin: 40px 0; border: 0; border-top: 1px solid #eee;">
-    
-    <h3>Latest Publications</h3>
-    
-    <!-- Main content list -->
-    <ul style="list-style: none; padding: 0;">
-        {% for post in sidebar_posts %}
-        <li style="margin-bottom: 30px;">
-            <a href="/{{ post.slug }}" style="font-size: 1.3rem; font-weight: 700; display: block; margin-bottom: 5px;">
-                {{ post.title }}
-            </a>
-            <span style="font-size: 0.9rem; color: #666; font-family: var(--font-head);">
-                FILE: {{ post.slug }}.md
-            </span>
-        </li>
-        {% endfor %}
-    </ul>
 </div>
+
+<ul style="list-style: none; padding: 0;">
+    {% for post in posts %}
+    <li style="margin-bottom: 30px; border-bottom: 1px solid #f0f0f0; padding-bottom: 30px;">
+        <!-- Category Label -->
+        <span style="font-family: var(--font-head); font-size: 0.75rem; color: #999; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 5px;">
+            {{ post.category_title }}
+        </span>
+        
+        <a href="/{{ post.category_slug }}/{{ post.slug }}" style="font-size: 1.4rem; font-weight: 700; color: #111; display: block; line-height: 1.3; margin-bottom: 8px;">
+            {{ post.title }}
+        </a>
+
+        <!-- THE NEW DESCRIPTION -->
+        {% if post.summary %}
+        <p style="font-size: 1rem; color: #444; margin: 0 0 10px 0; line-height: 1.5; max-width: 650px;">
+            {{ post.summary }}
+        </p>
+        {% endif %}
+        
+        <a href="/{{ post.category_slug }}/{{ post.slug }}" style="font-size: 0.9rem; font-weight: 500; color: var(--accent-color);">Read Entry &rarr;</a>
+    </li>
+    {% endfor %}
+</ul>
 {% endblock %}
