@@ -2,7 +2,7 @@
 
 Learning a programming language is indisputably useful. It is not a point I am about to argue. However, whether you should learn a programming language like python, or not, is a deeper matter. 
 
-If you’re not building a career around software, if your profession is science, medicine, analysis, research, anything where code is a *tool* rather than your entire profession, I assure you, to “learn Python” is the wrong mountain to climb. Especially in this moment in time. I’m not saying that Python isn’t useful. It absolutely is. But usefulness and *return on investment* are not the same thing and you should be deliverate about investing your cognitive energy, efficently.
+If you’re not building a career around software, if your profession is science, medicine, analysis, research, anything where code is a *tool* rather than your entire profession, I assure you, to “learn Python” is the wrong mountain to climb. Especially in this moment in time. I’m not saying that Python isn’t useful. It absolutely is. But usefulness and *return on investment* are not the same thing and you should be deliberate about investing your cognitive energy, efficiently.
 
 What actually matters is **conceptual fluency** and **heuristics**. 
 
