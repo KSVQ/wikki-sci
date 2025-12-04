@@ -1,3 +1,5 @@
+/* static/css/style.css */
+
 /* =========================================
    1. VARIABLES & THEME CONFIGURATION
    ========================================= */
@@ -66,31 +68,18 @@ body {
     align-items: start;
 }
 
-@media (max-width: 900px) {
-    .layout-wrapper { 
-        grid-template-columns: 1fr; 
-        gap: 40px; 
-    }
-    .sidebar { 
-        position: relative; 
-        top: 0; 
-        border-right: none; 
-        border-bottom: 1px solid var(--border-color); 
-        padding-bottom: 20px; 
-    }
-    .theme-toggle { top: 15px; right: 15px; }
-}
-
 /* =========================================
    4. SIDEBAR & NAVIGATION
    ========================================= */
 .sidebar {
     font-family: var(--font-ui);
     font-size: 0.9rem;
-    position: sticky;
+    position: sticky; /* Desktop Default */
     top: 40px;
     padding-right: 20px;
     border-right: 1px solid transparent;
+    max-height: calc(100vh - 40px); /* PREVENTS OVERFLOW ON DESKTOP */
+    overflow-y: auto; /* ALLOWS SCROLLING WITHIN SIDEBAR ON DESKTOP */
 }
 
 .logo-box {
@@ -156,7 +145,7 @@ body {
 .nav-item-container { margin-bottom: 18px; }
 
 /* =========================================
-   5. UI ELEMENTS (Buttons, Toggles)
+   5. UI ELEMENTS
    ========================================= */
 .theme-toggle {
     position: fixed;
@@ -202,4 +191,26 @@ blockquote {
     color: var(--meta-color);
     font-style: italic;
     margin: 20px 0;
+}
+
+/* =========================================
+   7. MOBILE OVERRIDES (MUST BE LAST)
+   ========================================= */
+@media (max-width: 900px) {
+    .layout-wrapper { 
+        grid-template-columns: 1fr; 
+        gap: 40px; 
+    }
+    
+    .sidebar { 
+        position: relative; /* DISABLE STICKY ON MOBILE */
+        top: 0; 
+        border-right: none; 
+        border-bottom: 1px solid var(--border-color); 
+        padding-bottom: 20px;
+        max-height: none; /* Let it grow naturally */
+        overflow-y: visible;
+    }
+    
+    .theme-toggle { top: 15px; right: 15px; }
 }

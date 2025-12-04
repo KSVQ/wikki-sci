@@ -18,14 +18,14 @@
         })();
     </script>
 
-    <!-- 1. The Structure -->
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
     
-    <!-- 2. The Code Syntax -->
+    <!-- 1. The Code Syntax -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/syntax.css') }}">
-    
-    <!-- 3. The Article Overrides (Wins the Cascade) -->
+    <!-- 2. The Article Overrides (Wins the Cascade) -->
     <link rel="stylesheet" href="{{ url_for('static', filename='css/markdown.css') }}">
+    <!-- 3. The Structure -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">        
 </head>
 <body>
 
