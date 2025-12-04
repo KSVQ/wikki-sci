@@ -112,6 +112,13 @@ Here is the image example:
 
 ![System Architecture Diagram](/static/images/Roccurves.png)
 
+<!-- Medium Sized -->
+![Chart](/static/images/Roccurves.png){: .medium }
+
+<!-- Small & Centered -->
+![Logo](/static/images/Roccurves.png){: .small .center }
+
+
 *Figure 1: Analysis of load-bearing constraints.*
 
 ---

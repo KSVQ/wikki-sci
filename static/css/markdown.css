@@ -46,3 +46,30 @@ article td {
     border-bottom: 1px solid var(--border-color);
     padding: 10px;
 }
+
+/* IMAGE SIZING UTILITIES */
+
+/* Default: Always fit container */
+article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+}
+
+/* Class: .small (Good for icons or logos) */
+article img.small {
+    width: 200px;
+    max-width: 50%; /* Prevent overflow on tiny screens */
+}
+
+/* Class: .medium (Good for diagrams) */
+article img.medium {
+    width: 500px;
+    max-width: 100%;
+}
+
+/* Class: .center (Centers the image) */
+article img.center {
+    margin: 20px auto;
+}

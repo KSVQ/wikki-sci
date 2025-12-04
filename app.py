@@ -97,7 +97,7 @@ def get_all_posts():
                         'title': title,
                         'summary': summary, # NEW FIELD
                         'slug': slug,
-                        'category_slug': cat_slug, 
+                        'category_slug': cat_slug,
                         'category_title': CATEGORY_META[cat_slug]['title']
                     })
     return all_posts
@@ -116,7 +116,7 @@ def get_posts_in_category(category_slug):
             
             posts.append({
                 'title': title, 
-                'summary': summary, # NEW FIELD
+                'summary': summary, 
                 'slug': slug, 
                 'category_slug': category_slug
             })
@@ -153,6 +153,7 @@ def post(category, slug):
         'fenced_code', 
         'codehilite',
         'tables', 
+        'attr_list', 
         TocExtension(baselevel=2)
     ])
     html_content = md.convert(text)
