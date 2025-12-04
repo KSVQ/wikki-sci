@@ -46,7 +46,7 @@ def extract_metadata(filepath):
     """
     Reads a markdown file and extracts:
     1. Title (First line)
-    2. Summary (First non-empty line after title)
+    2. Summary (First non-empty line after title) - RENDERED AS HTML
     """
     title = "Untitled"
     summary = ""
@@ -62,12 +62,20 @@ def extract_metadata(filepath):
             # 2. Get Summary (Scan for first text block)
             for line in lines[1:]:
                 clean_line = line.strip()
-                # Skip empty lines, headers, or blockquotes if you prefer
                 if clean_line and not clean_line.startswith('#'):
-                    summary = clean_line
-                    # Truncate if too long (optional)
-                    if len(summary) > 160: 
-                        summary = summary[:160] + "..."
+                    # Truncate raw text first to prevent huge blobs
+                    if len(clean_line) > 200: 
+                        clean_line = clean_line[:200] + "..."
+                    
+                    # RENDER MARKDOWN TO HTML
+                    # We use the module-level markdown function for a quick convert
+                    html_snippet = markdown.markdown(clean_line)
+                    
+                    # CRITICAL: Strip the <p> tags so it fits your template's styling
+                    if html_snippet.startswith('<p>') and html_snippet.endswith('</p>'):
+                        html_snippet = html_snippet[3:-4]
+                    
+                    summary = html_snippet
                     break
     except Exception as e:
         print(f"Error parsing {filepath}: {e}")
@@ -141,7 +149,12 @@ def post(category, slug):
     with open(filepath, 'r', encoding='utf-8') as f:
         text = f.read()
     
-    md = markdown.Markdown(extensions=['fenced_code', 'codehilite', TocExtension(baselevel=2)])
+    md = markdown.Markdown(extensions=[
+        'fenced_code', 
+        'codehilite',
+        'tables', 
+        TocExtension(baselevel=2)
+    ])
     html_content = md.convert(text)
     
     return render_template('post.html', content=html_content, title=slug, toc=md.toc, category=category)
