@@ -14,7 +14,7 @@ It’s one of the most important findings in the history of educational research
 
 ---
 
-**What It Actually Means**
+## What It Actually Means
 
 In 1984, educational psychologist Benjamin Bloom published a study demonstrating a result that still shakes the field:
 
@@ -30,43 +30,41 @@ Bloom wasn’t measuring talent. He was measuring instructional structure.
 
 ---
 
-**Why tutoring produced a 2σ jump**
+## Why tutoring produced a 2σ jump
 
 Bloom identified the core drivers:
 
-1. Real-time feedback
+1. **Real-time feedback**
 
-Misunderstandings are corrected instantly instead of snowballing into confusion.
+    Misunderstandings are corrected instantly instead of snowballing into confusion.
 
-2. Personalized pacing
+2. **Personalized pacing**
 
-Students don’t get dragged by the fast or slow pace of a class. They move when they’re actually ready.
+    Students don’t get dragged by the fast or slow pace of a class. They move when they’re actually ready.
 
-3. Mastery learning
+3. **Mastery learning**
 
-The tutor ensures the student actually grasps the concept before moving on — not just completing tasks for grades.
+    The tutor ensures the student actually grasps the concept before moving on — not just completing tasks for grades.
 
-4. Adaptive explanations
+4. **Adaptive explanations**
 
-If a student doesn’t get it one way, the tutor switches methods, analogies, or examples until it clicks.
+    If a student doesn’t get it one way, the tutor switches methods, analogies, or examples until it clicks.
 
-5. Cognitive scaffolding
+5. **Cognitive scaffolding**
 
-The tutor supports only what the student cannot yet do alone, building independence without overwhelm.
+    The tutor supports only what the student cannot yet do alone, building independence without overwhelm.
 
 Together, these create a learning environment where error doesn’t accumulate — understanding accumulates.
 
 ---
 
-**Why Bloom called it a “problem”**
+## Why Bloom called it a “problem”
 
 Because the implications are enormous and uncomfortable:
 
-If 1:1 tutoring produces 2σ gains, then every student could perform at elite levels —
-IF they had individualized guidance.
+If 1:1 tutoring produces 2σ gains, then every student could perform at elite levels IF they had individualized guidance.
 
-But scaling personal tutors to entire populations is impossible.
-That’s the “problem.”
+But scaling personal tutors to entire populations is impossible. That’s the “problem.”
 
 Bloom challenged the field to find a scalable method to mimic the benefits of tutoring without requiring one tutor per student.
 
@@ -74,11 +72,9 @@ For decades, no one solved it.
 
 ---
 
-**Why this matters**
+## Why this matters
 
-Because Bloom’s finding directly supports your position:
-
-People learn fastest when they’re guided, adapted to, and supported.
+MY position is that people learn fastest when they’re guided, adapted to, and supported. Bloom’s finding directly supports my position.
 
 Dumping students into Python, statistics, or programming without individualized scaffolding guarantees slow progress and frustration.
 
