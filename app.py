@@ -149,20 +149,28 @@ def post(category, slug):
     with open(filepath, 'r', encoding='utf-8') as f:
         text = f.read()
     
-    md = markdown.Markdown(extensions=[
-        'fenced_code', 
-        'codehilite',
-        'tables', 
-        'attr_list', 
-        'footnotes', 
-        'admonition', 
-        'def_list', 
-        'abbr', 
-        'pymdownx.tasklist',
-        'pymdownx.betterem',
-        'pymdownx.tilde', 
-        TocExtension(baselevel=2)
-    ])
+    md = markdown.Markdown(
+        extensions=[
+            'fenced_code', 
+            'codehilite',
+            'tables', 
+            'attr_list', 
+            'footnotes', 
+            'admonition', 
+            'def_list', 
+            'abbr', 
+            'pymdownx.tasklist',
+            'pymdownx.betterem',
+            'pymdownx.tilde', 
+            TocExtension(baselevel=2)
+        ]
+        #,
+        #extension_configs={
+        #    'pymdownx.tasklist': {
+        #        'clickable_checkbox': True
+        #    }
+        #}
+    )
     html_content = md.convert(text)
     
     return render_template('post.html', content=html_content, title=slug, toc=md.toc, category=category)
