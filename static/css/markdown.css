@@ -73,3 +73,93 @@ article img.medium {
 article img.center {
     margin: 20px auto;
 }
+
+/* --- FOOTNOTES --- */
+.footnote {
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    border-top: 1px solid var(--border-color);
+    margin-top: 40px;
+    padding-top: 20px;
+}
+.footnote ol {
+    padding-left: 20px;
+}
+.footnote li {
+    margin-bottom: 10px;
+}
+
+/* --- ADMONITIONS (Note Blocks) --- */
+.admonition {
+    border-left: 4px solid var(--accent-color);
+    background-color: var(--code-bg);
+    padding: 15px 20px;
+    margin: 20px 0;
+    border-radius: 4px;
+}
+.admonition-title {
+    font-weight: bold;
+    font-family: var(--font-ui); /* Use sans-serif for UI labels */
+    margin-bottom: 10px;
+    color: var(--text-color);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+}
+/* Specific colors for specific types */
+.admonition.warning { border-left-color: #d73a49; } /* Red */
+.admonition.note { border-left-color: #004488; }    /* Blue */
+.admonition.tip { border-left-color: #28a745; }     /* Green */
+
+/* --- DEFINITION LISTS --- */
+dl { margin-bottom: 20px; }
+dt {
+    font-weight: bold;
+    margin-top: 15px;
+    color: var(--text-color);
+}
+dd {
+    margin-left: 20px;
+    color: var(--meta-color);
+    margin-bottom: 5px;
+}
+
+/* --- LISTS (Academic Spacing) --- */
+article ul, article ol {
+    margin: 20px 0;
+    padding-left: 30px; /* Indent content */
+    color: var(--text-color);
+}
+
+/* Add breathing room between items */
+article li {
+    margin-bottom: 8px; 
+    line-height: 1.6;
+}
+
+/* Nested lists shouldn't have huge margins */
+article li ul, article li ol {
+    margin: 10px 0;
+}
+
+/* --- EXTENDED UTILITIES (Pymdownx) --- */
+
+/* 1. Task Lists (Checkboxes) */
+/* Removes the bullet point so the checkbox sits flush */
+.task-list-item {
+    list-style-type: none;
+    margin-left: 1em; /* Pull it back to the left */
+}
+
+/* Align the checkbox box with the text */
+.task-list-item input[type="checkbox"] {
+    vertical-align: middle;
+    margin: 0 0.5em 0.2em -1em; /* Fine-tune spacing */
+    cursor: default;
+}
+
+/* 2. Strikethrough (~~text~~) */
+del {
+    color: var(--meta-color); /* Make deleted text lighter/grey */
+    text-decoration-color: var(--accent-color); /* Make the line blue/accent */
+}

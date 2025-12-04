@@ -154,6 +154,13 @@ def post(category, slug):
         'codehilite',
         'tables', 
         'attr_list', 
+        'footnotes', 
+        'admonition', 
+        'def_list', 
+        'abbr', 
+        'pymdownx.tasklist',
+        'pymdownx.betterem',
+        'pymdownx.tilde', 
         TocExtension(baselevel=2)
     ])
     html_content = md.convert(text)

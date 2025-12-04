@@ -7,6 +7,12 @@
 ## 1. Introduction to the Protocol
 The primary constraint of modern educational architecture is not the *availability* of data, but the **structural integrity** of the delivery mechanism. As noted by [Saric, 2025], linear models fail when applied to non-linear cognitive maps.
 
+- [ ] List Item 1
+- [ ] List Item 2
+- [ ] List Item 3
+- [ ] List Item 4
+- [ ] List Item 5
+
 ### 1.1 The Core Hypothesis
 We propose a system where the "Curriculum" is not a static list, but a *dynamic graph*.
 1.  **Node A:** Assessment of current state.

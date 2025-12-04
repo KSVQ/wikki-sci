@@ -2,3 +2,4 @@ Flask
 markdown
 Pygments
 gunicorn
+pymdown-extensions
