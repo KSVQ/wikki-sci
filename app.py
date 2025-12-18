@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, abort
+from flask import Flask, render_template, abort, send_from_directory
 import markdown
 from markdown.extensions.toc import TocExtension
 
@@ -7,6 +7,7 @@ app = Flask(__name__)
 
 # CONFIGURATION
 CONTENT_DIR = 'content'
+CITATIONS_DIR = 'citations'
 
 # CATEGORY META (No changes here)
 CATEGORY_META = {
@@ -122,6 +123,7 @@ def get_posts_in_category(category_slug):
             })
     return posts
 
+
 @app.context_processor
 def inject_globals():
     return dict(categories=get_categories())
@@ -139,6 +141,23 @@ def category_index(category):
     meta = CATEGORY_META[category].copy()
     meta['slug'] = category
     return render_template('category.html', posts=posts, meta=meta)
+
+@app.route('/citations/<category>/<filename>')
+def citation(category, filename):
+    # Validate category
+    if category not in CATEGORY_META:
+        abort(404)
+
+    citation_path = os.path.join(CITATIONS_DIR, category)
+
+    if not os.path.exists(os.path.join(citation_path, filename)):
+        abort(404)
+
+    return send_from_directory(
+        citation_path,
+        filename,
+        as_attachment=True
+    )
 
 @app.route('/<category>/<slug>')
 def post(category, slug):
