@@ -12,23 +12,23 @@ CONTENT_DIR = 'content'
 CATEGORY_META = {
     'publications': {
         'title': 'Publications', 
-        'desc': 'Formal architectural frameworks, technical papers, and finished studies.'
+        'desc': 'Formal frameworks, technical papers, and finished studies.'
     },
     'observations': {
         'title': 'Working Papers', 
-        'desc': 'Hypotheses, system observations, and ongoing field notes.'
+        'desc': 'Hypotheses, observations, and ongoing field notes.'
     },
     'research': {
         'title': 'Resources', 
-        'desc': 'Curated signals, external literature, and significant datasets.'
+        'desc': 'Curated signals, external literature and significant datasets.'
     },
     'commentary': {
         'title': 'Commentary', 
-        'desc': 'Critical analysis, essays, and dialectics on the field.'
+        'desc': 'Critical analysis, essays, and dialectics on the field and relevant subject matters.'
     },
     'tools': {
         'title': 'Tools', 
-        'desc': 'Software, algorithms, and computational utilities.'
+        'desc': 'Software, scripts, tools, algorithms, and computational utilities.'
     }
 }
 
