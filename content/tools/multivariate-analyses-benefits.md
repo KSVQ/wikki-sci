@@ -311,11 +311,10 @@ Saric, Kristina. *Multivariate Statistical Models: Why Anyone Working With Compl
 KristinaSaric.com, 2025.  
 https://kristinasaric.com/tools/multivariate-analyses-benefits
 
+---
 
 [Download citation (RIS)](https://kristinasaric.com/tools/citations/multivariate-analyses-benefits.ris)
 Compatible with EndNote, Zotero, and Mendeley.
-
----
 
 
 <span class="Z3988" title="ctx_ver=Z39.88-2004
