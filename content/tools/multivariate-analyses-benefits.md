@@ -321,3 +321,16 @@ https://kristinasaric.com/tools/multivariate-analyses-benefits
 &rft.language=en
 &rft_id=https://kristinasaric.com/tools/multivariate-analyses-benefits">
 </span>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ScholarlyArticle",
+  "headline": "Multivariate Statistical Models: Why Anyone Working With Complex Data Should Be Using Multivariate Models (and Why Most Still Don’t)",
+  "author": { "@type": "Person", "name": "Kristina Saric" },
+  "datePublished": "2025",
+  "inLanguage": "en",
+  "publisher": { "@type": "Organization", "name": "KristinaSaric.com" },
+  "mainEntityOfPage": "https://kristinasaric.com/tools/multivariate-analyses-benefits"
+}
+</script>
