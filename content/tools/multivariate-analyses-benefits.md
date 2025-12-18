@@ -312,6 +312,12 @@ KristinaSaric.com, 2025.
 https://kristinasaric.com/tools/multivariate-analyses-benefits
 
 
+[Download citation (RIS)](https://kristinasaric.com/tools/citations/multivariate-analyses-benefits.ris)
+Compatible with EndNote, Zotero, and Mendeley.
+
+---
+
+
 <span class="Z3988" title="ctx_ver=Z39.88-2004
 &rft.genre=article
 &rft.atitle=Multivariate Statistical Models: Why Anyone Working With Complex Data Should Be Using Multivariate Models (and Why Most Still Don’t)
@@ -321,16 +327,3 @@ https://kristinasaric.com/tools/multivariate-analyses-benefits
 &rft.language=en
 &rft_id=https://kristinasaric.com/tools/multivariate-analyses-benefits">
 </span>
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ScholarlyArticle",
-  "headline": "Multivariate Statistical Models: Why Anyone Working With Complex Data Should Be Using Multivariate Models (and Why Most Still Don’t)",
-  "author": { "@type": "Person", "name": "Kristina Saric" },
-  "datePublished": "2025",
-  "inLanguage": "en",
-  "publisher": { "@type": "Organization", "name": "KristinaSaric.com" },
-  "mainEntityOfPage": "https://kristinasaric.com/tools/multivariate-analyses-benefits"
-}
-</script>
