@@ -300,3 +300,24 @@ plt.show()
 4. **Treat components as latent bridges**
 
    * Each canonical dimension is a compressed relationship between systems
+
+
+
+---
+
+### How to Cite This Article
+
+Saric, Kristina. *Multivariate Statistical Models: Why Anyone Working With Complex Data Should Be Using Multivariate Models (and Why Most Still Don’t).*  
+KristinaSaric.com, 2025.  
+https://kristinasaric.com/tools/multivariate-analyses-benefits
+
+
+<span class="Z3988" title="ctx_ver=Z39.88-2004
+&rft.genre=article
+&rft.atitle=Multivariate Statistical Models: Why Anyone Working With Complex Data Should Be Using Multivariate Models (and Why Most Still Don’t)
+&rft.au=Saric, Kristina
+&rft.date=2025
+&rft.jtitle=KristinaSaric.com
+&rft.language=en
+&rft_id=https://kristinasaric.com/tools/multivariate-analyses-benefits">
+</span>
