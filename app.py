@@ -180,9 +180,15 @@ def post(category, slug):
             'abbr', 
             'pymdownx.tasklist',
             'pymdownx.betterem',
-            'pymdownx.tilde', 
+            'pymdownx.tilde',
+            'pymdownx.arithmatex',
             TocExtension(baselevel=2)
-        ]
+        ],
+        extension_configs={
+            'pymdownx.arithmatex': {
+                'generic': True
+            }
+        }
         #,
         #extension_configs={
         #    'pymdownx.tasklist': {
