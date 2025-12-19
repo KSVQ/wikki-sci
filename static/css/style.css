@@ -193,8 +193,41 @@ blockquote {
     margin: 20px 0;
 }
 
+
 /* =========================================
-   7. MOBILE OVERRIDES (MUST BE LAST)
+   7. CUSTOM SCROLLBAR FOR DARK MODE SIDEBARS
+   ========================================= */
+/* --- Dark Mode Sidebar Scrollbar --- */
+
+/* For Chrome, Safari, Edge */
+html[data-theme="dark"] .sidebar::-webkit-scrollbar {
+    width: 6px;                  /* Slimmer than default */
+}
+
+html[data-theme="dark"] .sidebar::-webkit-scrollbar-track {
+    background: transparent;     /* Track stays invisible */
+}
+
+html[data-theme="dark"] .sidebar::-webkit-scrollbar-thumb {
+    /* 20% opaque white - looks like dark grey on dark backgrounds */
+    background-color: rgba(255, 255, 255, 0.2); 
+    border-radius: 10px;         /* Fully rounded edges */
+}
+
+html[data-theme="dark"] .sidebar::-webkit-scrollbar-thumb:hover {
+    /* Slightly more visible when you grab it */
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+/* For Firefox */
+html[data-theme="dark"] .sidebar {
+    scrollbar-width: thin;
+    scrollbar-color: rgba(255, 255, 255, 0.2) transparent;
+}
+
+
+/* =========================================
+   8. MOBILE OVERRIDES (MUST BE LAST)
    ========================================= */
 @media (max-width: 900px) {
     .layout-wrapper { 
