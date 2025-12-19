@@ -934,5 +934,13 @@ A: Histograms will be noisy. Better to use individual data points or violin plot
 
 ---
 
-*End of Article*
+# How to Cite This Article
 
+Saric, Kristina. *The Human Algorithm: Using Visual Pattern Recognition to Decode Complex Data*  
+KristinaSaric.com, 2025.  
+https://kristinasaric.com/research/the-human-visual-algorithm
+
+## Citations
+
+- [Download citation (RIS)](/citations/research/the-human-visual-algorithm.ris)
+- [Download citation (NBIB)](/citations/research/the-human-visual-algorithm.nbib)
