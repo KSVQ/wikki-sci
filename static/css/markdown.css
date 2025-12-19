@@ -180,3 +180,14 @@ del {
     color: var(--meta-color); /* Make deleted text lighter/grey */
     text-decoration-color: var(--accent-color); /* Make the line blue/accent */
 }
+
+/* LaTeX Math Formula Styles */
+
+div.arithmatex{
+    margin: 2rem;
+    padding: 1rem;
+    background: #000000;
+    color: #FFFFFF;
+    border: 2px solid #333;
+    border-radius: 1rem;
+}
