@@ -305,13 +305,13 @@ plt.show()
 
 ---
 
-### How to Cite This Article
+# How to Cite This Article
 
 Saric, Kristina. *Multivariate Statistical Models: Why Anyone Working With Complex Data Should Be Using Multivariate Models (and Why Most Still Don’t).*  
 KristinaSaric.com, 2025.  
 https://kristinasaric.com/tools/multivariate-analyses-benefits
 
-### Citations
+## Citations
 
 - [Download citation (RIS)](/citations/tools/multivariate-analyses-benefits.ris)
 - [Download citation (NBIB)](/citations/tools/multivariate-analyses-benefits.nbib)
